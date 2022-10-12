@@ -1,0 +1,99 @@
+<div class="m-5 header">
+    <h1>Equipos</h1>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Asignados</h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Equipo</th>
+                    <th>Status</th>
+                    <th>Restantes</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let asignado of Asignados">
+                        <td>{{ asignado.Equipo }}</td>
+                        <td>{{ asignado.Status }}</td>
+                        <td>{{ asignado.Repetidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Pendientes</h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Equipo</th>
+                    <th>Status </th>
+                    <th>Restantes</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pendiente of Pendientes">
+                        <td>{{ pendiente.Equipo }}</td>
+                        <td>{{ pendiente.Status }}</td>
+                        <td>{{ pendiente.Repetidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Capturados</h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Equipo</th>
+                    <th>Status</th>
+                    <th>Restantes</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let capturado of Capturados">
+                        <td>{{ capturado.Equipo }}</td>
+                        <td>{{ capturado.Status }}</td>
+                        <td>{{ capturado.Repetidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Recibidos</h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Equipo</th>
+                    <th>Status</th>
+                    <th>Restantes</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let recibido of Recibidos">
+                        <td>{{ recibido.Equipo }}</td>
+                        <td>{{ recibido.Status }}</td>
+                        <td>{{ recibido.Repetidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h4>Cancelados</h4>
+            <table class="table table-hover">
+                <thead>
+                    <th>Equipo</th>
+                    <th>Status</th>
+                    <th>Restantes</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cancelado of Cancelados">
+                        <td>{{ cancelado.Equipo }}</td>
+                        <td>{{ cancelado.Status }}</td>
+                        <td>{{ cancelado.Repetidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <!-- <div  >
+            
+          
+            
+            <div id="equipos" style="width: 75em;height:28em;"></div>
+        </div> -->
+</div>

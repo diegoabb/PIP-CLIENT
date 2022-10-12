@@ -1,0 +1,77 @@
+
+    <div class="m-5 header">
+        <h1> {{ mesa?.value }}  </h1>
+        <hr >
+        <h4>Equipo <small id="nombre"> </small></h4>
+        <div class="m-4">
+            <div class="row">
+                <div class="col col-sm-3">
+                    <div class="form-floating">
+                        <select class="form-select" #mesa id="Mesa" (change)="selectMesa(mesa.value)" aria-label="Floating label select example">
+                            <option selected>Seleccione una opción</option>
+                          <option *ngFor="let mesa of mesas">{{ mesa }}</option>
+                        </select>
+                        <label for="Mesa">Seleccione la mesa</label>
+                      </div>
+                </div>
+                <div class="col col-sm-2">
+                    <div class="form-floating">
+                        <select class="form-select" #equipo id="Equipo" (change)="selectTeam()" aria-label="Floating label select example">
+                            <option selected></option>
+                          <option *ngFor="let equipo of equipos">{{ equipo.key }}</option>
+                        </select>
+                        <label for="Equipo">Equipo</label>
+                      </div>
+                </div>
+                <div class="col col-sm-1" [hidden]="asignar">
+                    <div class="form-floating">
+                        <input class="form-control"#batch id="BATCH" type="text"/>
+                         
+                        <label for="BATCH">BATCH</label>
+                      </div>
+                </div>
+                <div class="col col-sm-1" [hidden]="asignar">
+                    <div class="form-floating">
+                        <input class="form-control" #team id="asignar" type="number"/>
+                         
+                        <label for="asignar">Asignar a:</label>
+                      </div>
+                </div>
+                <div class="col col-sm-1" [hidden]="asignar">
+                    <div class="form-floating">
+                        <input class="btn btn-primary" (click)="Transferir(batch.value, team.value )" id="asignar" value="Asignar" type="button"/>
+                        
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div  class="m-4">
+            <div class="row" >
+                <div  class="col">
+                    <div id="main" style="width: 40em;height:30em;"></div>
+                    
+                </div>
+                <div [hidden]="hide" class="col-sm" >
+                    <input type="text" #pip placeholder="Buscar" uppercase name="Search" class="form-control" id="">
+                    <br>
+                    <input [disabled]="disableAsignado"  type="button" value="Asignar" (click)="Asignar(pip.value)"  class="btn btn-success form-control">
+                    <br>
+                    <br>
+                    <input [disabled]="disableRecibido" type="button" value="Recibido" (click)="Recibir(pip.value)" class="btn btn-warning form-control">
+                    <br>
+                    <br>
+                    <input [disabled]="disableCapturado" type="button" value="Capturado" (click)="Capturar(pip.value)" class="btn btn-primary form-control">  
+                    <br>
+                    <br>
+                    <input [disabled]="disableCancelar" type="button" value="Cancelar" (click)="Cancelar(pip.value)" class="btn btn-danger form-control">                    
+                    <br>
+                    <br>
+                </div>
+                <div [hidden]="hide" class="col-sm">
+                    <input type="button" (click)="getpip(pip.value)" value="Buscar" class="btn btn-primary btn-lg">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,48 @@
+<div class="m-5 header">
+    <h1>Reportes</h1>
+    <hr>
+    <div class="container" >
+        <br>
+        
+        <button (click)="descargar()" class="btn btn-outline-primary">Descargar</button>
+         <table class="table table-hover">
+            <thead>
+                <th>Batch #</th>
+                <th>Folio Inicial</th>
+                <th>Folio Final</th>
+                <th>Total cards</th>
+                
+                <th>Departamento</th>
+                <th>Líder</th>
+                <th>Auditor</th>
+                <th>Storage Location</th>
+                <th>Mesa</th>
+                <th>Status</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let pip of pips | paginate: { itemsPerPage: 10, currentPage: page };">
+                    <td>{{ pip.pip }}</td>
+                    <td>{{ pip.folioinicial }}</td>
+                    <td> {{ pip.foliofinal }}</td>
+                    <td> {{ pip.totalcards }}</td>
+                    <td> {{ pip.teamname }} </td>
+                    <td> {{ pip.lider }}</td>
+                    <td> {{ pip.auditor }}</td>
+                    <td>  {{ pip.storloc }} </td>
+                    <td> {{ pip.mesa }} </td>
+                    <td> {{ pip.status }} </td>
+                    
+                </tr>
+            </tbody>
+         </table>
+         <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </ul>
+          </nav>
+   </div>
+   <div class="container">
+       <app-chart></app-chart>
+   </div>
+</div>
